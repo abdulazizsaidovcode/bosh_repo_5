@@ -1,9 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @import "fonts";
+
+@layer components {
+  .bg-tiles {
+    background-size: 73px 73px;
+    background-image: linear-gradient(currentColor 1px, transparent 1px),
+      linear-gradient(to right, currentColor 1px, transparent 1px);
+    @apply -m-0.5;
+  }
+}
+
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
 
 body {
 	font-family: CormorantUpright;
-	font-size: 50px;
-	span {
-		color: red;
-	}
 }

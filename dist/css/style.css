@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @font-face {
   font-family: CormorantUpright;
   font-display: swap;
@@ -26,10 +29,19 @@
   font-weight: 400;
   font-style: normal;
 }
+@layer components {
+  .bg-tiles {
+    background-size: 73px 73px;
+    background-image: linear-gradient(currentColor 1px, transparent 1px), linear-gradient(to right, currentColor 1px, transparent 1px);
+    @apply -m-0.5;
+  }
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: CormorantUpright;
-  font-size: 50px;
-}
-body span {
-  color: red;
 }
