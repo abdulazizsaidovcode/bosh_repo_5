@@ -1,4 +1,4 @@
-const options = require("./config"); //options from config.js
+const options = require("./config");
 
 const allPlugins = {
   typography: require("@tailwindcss/typography"),
@@ -7,19 +7,22 @@ const allPlugins = {
 };
 
 const plugins = Object.keys(allPlugins)
-  .filter((k) => options.plugins[k])
-  .map((k) => {
-    if (k in options.plugins && options.plugins[k]) {
-      return allPlugins[k];
-    }
-  });
+  .filter(key => options.plugins[key])
+  .map(key => allPlugins[key]);
 
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{html,js,php}"],
   darkMode: "class",
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        customColor: '#333',
+      },
+      fontFamily: {
+        customFont: ['Helvetica', 'Arial', 'sans-serif']
+      }
+    },
   },
+  
   plugins: plugins,
 };
